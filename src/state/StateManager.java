@@ -9,7 +9,7 @@ import graphic.ImageLoader;
 import graphic.Sprite;
 
 public class StateManager {
-    private State[] gs;
+    private BookState[] gs;
     private int CurrentState;
 
     public static Graphics2D g;
@@ -24,7 +24,7 @@ public class StateManager {
 
     public StateManager(Graphics2D g) {
         StateManager.g = g;
-        gs = new State[6];
+        gs = new BookState[6];
 
 
         ImageLoader.init();
@@ -44,13 +44,10 @@ public class StateManager {
             gs[state] = new SelectorState(this);
         }
         if (state == BOOK1) {
-            gs[state] = new BookState(this);
+            gs[state] = new Book1(this);
         }
         if (state == BOOK2) {
-            gs[state] = new BookState(this);
-        }
-        if (state == BOOK3) {
-            gs[state] = new BookState(this);
+            gs[state] = new Book2(this);
         }
     }
 
@@ -62,7 +59,7 @@ public class StateManager {
         return gs[state] != null;
     }
 
-    public State getState(int state) {
+    public BookState getState(int state) {
         return gs[state];
     }
 

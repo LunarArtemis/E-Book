@@ -44,7 +44,7 @@ public class ImageLoader {
                 if (listOfFiles[i].isFile()) {
                     String name = listOfFiles[i].getName();
                     String[] parts = name.split("\\.");
-                    String part1 = parts[0];
+                    //String part1 = parts[0];
                     String part2 = parts[1];
                     if (part2.equals("jpg")) {
                         ImageLoader.loadImage(path + "/" + name);
