@@ -11,7 +11,7 @@ public class Book1 extends BookState {
     private int totalFiles = 0;
 
     public static void init(){
-        
+        //test
     }
 
     public Book1(StateManager sm) {
