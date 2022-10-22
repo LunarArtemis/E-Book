@@ -5,7 +5,6 @@ import java.awt.Graphics2D;
 import util.KeyHandler;
 import util.MouseHandler;
 
-import graphic.ImageLoader;
 import graphic.Sprite;
 
 public class StateManager {
@@ -27,7 +26,7 @@ public class StateManager {
         gs = new BookState[6];
 
 
-        ImageLoader.init();
+        //ImageLoader.init();
 
         bg = new Sprite("menu/bg.png", 640, 384);
         ui = new Sprite("ui/ui.png", 64, 64);

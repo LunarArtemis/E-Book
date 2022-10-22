@@ -1,7 +1,6 @@
 package state;
 
 import java.awt.Graphics2D;
-import java.util.Hashmap;
 
 import graphic.ImageLoader;
 import util.KeyHandler;
@@ -12,7 +11,7 @@ public class Book1 extends BookState {
     private String bookName;
     private String path = "src\\state\\Book1.java";
     private int totalFiles = 0;
-    private int currentPage = 0; 
+    //private int currentPage = 0; 
 
     public static void init(){
         //test
@@ -23,11 +22,11 @@ public class Book1 extends BookState {
         
         
 
-        totalFiles = ImageLoader.getFiles(path);
+        totalFiles = ImageLoader.getFiles(path+"/"+bookName);
         System.out.println(totalFiles);
     }
     
-    public String setName(String name){
+    public void setName(String name){
         bookName = name;
     } 
     
