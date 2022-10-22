@@ -7,9 +7,11 @@ import java.io.File;
 public class ImageLoader {
     // load image to hashmap
     public static HashMap<String, BufferedImage> images = new HashMap<String, BufferedImage>();
+    private int TotalPage = 0; 
     
-    public static void init(){
-        
+    public static ImageLoader(String path){
+        TotalPage = getFiles(path);
+        LoadImages(path); 
     }
 
     public static BufferedImage loadImage(String path) {
