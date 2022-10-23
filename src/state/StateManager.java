@@ -41,7 +41,7 @@ public class StateManager {
 
 
         // Set States
-        CurrentState = SELECTOR;
+        CurrentState = BOOK;
         loadState(CurrentState);
     }
 
