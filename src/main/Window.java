@@ -11,7 +11,7 @@ public class Window extends JFrame {
     private Panel gp;
     
     public Window(){
-        setTitle("Buky The Adventure");
+        setTitle("E-Book Reader");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIgnoreRepaint(true);
         pack();

@@ -4,8 +4,10 @@ import java.awt.Graphics2D;
 
 import util.KeyHandler;
 import util.MouseHandler;
-
+import graphic.Font;
+import graphic.Fontf;
 import graphic.Sprite;
+
 
 public class StateManager {
     private BookState[] gs;
@@ -15,6 +17,8 @@ public class StateManager {
     public static Sprite button;
     public static Sprite ui;
     public static Sprite bg;
+    public static Font font;
+    public static Fontf fontf;
 
     public static final int SELECTOR = 0;
     public static final int BOOK1 = 1;
@@ -25,6 +29,11 @@ public class StateManager {
 
 
         //ImageLoader.init();
+
+        font = new Font("font/font.png", 10, 10);
+        fontf = new Fontf();
+        fontf.loadFont("font/Stackedpixel.ttf", "MeatMadness");
+        Sprite.currentFont = font;
 
         bg = new Sprite("menu/bg.png", 640, 384);
         ui = new Sprite("ui/ui.png", 64, 64);
@@ -83,7 +92,12 @@ public class StateManager {
     }
 
     public void render(Graphics2D g) {
-        
+        g.setFont(StateManager.fontf.getFont("MeatMadness"));
+        for (int i = 0; i < gs.length; i++) {
+            if (gs[i] != null) {
+                gs[i].render(g);
+            }
+        }
     }
 
 }
