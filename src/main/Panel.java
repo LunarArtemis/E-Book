@@ -139,7 +139,7 @@ public class Panel extends JPanel implements Runnable {
             int thisSecond = (int) (lastUpdateTime / 1000000000);
             if (thisSecond > LAST_SECOND) {
                 if (FRAME_COUNT != OLD_FRAME_COUNT) {
-                    System.out.println("FPS: " + FRAME_COUNT);
+                    // System.out.println("FPS: " + FRAME_COUNT);
                     OLD_FRAME_COUNT = FRAME_COUNT;
                 }
                 FRAME_COUNT = 0;

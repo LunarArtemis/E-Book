@@ -21,7 +21,7 @@ public class StateManager {
     public static Fontf fontf;
 
     public static final int SELECTOR = 0;
-    public static final int BOOK1 = 1;
+    public static final int BOOK = 1;
 
     public StateManager(Graphics2D g) {
         StateManager.g = g;
@@ -49,7 +49,7 @@ public class StateManager {
         if (state == SELECTOR) {
             gs[state] = new SelectorState(this);
         }
-        if (state == BOOK1) {
+        if (state == BOOK) {
             gs[state] = new BookSelected(this);
         }
     }
