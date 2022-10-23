@@ -33,6 +33,13 @@ public class SelectorState extends BookState {
         btnBook1.addHoverImage(btnBook1.createButton(book1, imgHover, font, 0, 0, 0, 0));
 
         bg = new Button("", imgBg, font, new Vector2f(Panel.width / 2, Panel.height / 2), Panel.width,Panel.height);
+        
+        btnBook1.addEvent( e -> {
+            sm.unloadState(StateManager.SELECTOR);
+            sm.loadState(StateManager.BOOK1);
+            BookSelected.setName(book1);
+        });
+    
     }
 
     public void update(double time) {

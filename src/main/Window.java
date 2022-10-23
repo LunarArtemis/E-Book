@@ -9,8 +9,8 @@ public class Window extends JFrame {
 
     private BufferStrategy bs;
     private Panel gp;
-
-    public Window() {
+    
+    public Window(){
         setTitle("Buky The Adventure");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIgnoreRepaint(true);
@@ -27,9 +27,9 @@ public class Window extends JFrame {
         bs = getBufferStrategy();
 
         gp = new Panel(bs, 1280, 720);
-        // add(gp);
+        //add(gp);
         setContentPane(gp);
-
+        
     }
 
 }

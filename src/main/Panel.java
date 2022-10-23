@@ -29,7 +29,7 @@ public class Panel extends JPanel implements Runnable {
     private MouseHandler mouse;
     private KeyHandler key;
 
-    private StateManager gsm;
+    private StateManager sm;
 
     // CONSTRUCTOR
     public Panel(BufferStrategy bs, int width, int height) {
@@ -65,16 +65,16 @@ public class Panel extends JPanel implements Runnable {
 
         //Audio.loadSound("audio/pop2.mp3", "pop1", 0);
 
-        gsm = new StateManager(g);
+        sm = new StateManager(g);
     }
 
     // UPDATE
     public void update(double time) {
-        gsm.update(time);
+        sm.update(time);
     }
 
     public void input(MouseHandler mouse, KeyHandler key) {
-        gsm.input(mouse, key);
+        sm.input(mouse, key);
     }
 
     // RENDER
@@ -84,7 +84,7 @@ public class Panel extends JPanel implements Runnable {
             // rgb(54, 69, 79)
             g.setColor(new Color(54, 69, 79));
             g.fillRect(0, 0, width, height);
-            gsm.render(g);
+            sm.render(g);
         }
     }
 
@@ -161,4 +161,4 @@ public class Panel extends JPanel implements Runnable {
 
         }
     }
-}
+} 

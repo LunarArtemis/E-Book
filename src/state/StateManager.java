@@ -18,8 +18,6 @@ public class StateManager {
 
     public static final int SELECTOR = 0;
     public static final int BOOK1 = 1;
-    public static final int BOOK2 = 2;
-    public static final int BOOK3 = 3;
 
     public StateManager(Graphics2D g) {
         StateManager.g = g;
@@ -43,10 +41,7 @@ public class StateManager {
             gs[state] = new SelectorState(this);
         }
         if (state == BOOK1) {
-            gs[state] = new Book1(this);
-        }
-        if (state == BOOK2) {
-            gs[state] = new Book2(this);
+            gs[state] = new BookSelected(this);
         }
     }
 
