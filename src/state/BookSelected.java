@@ -16,21 +16,20 @@ public class BookSelected extends BookState {
 
     private static String bookName = "";
     private String path = "src\\state\\Book1.java";
-    private int totalFiles = 0;
-    // private int currentPage = 0;
+    private int totalFiles = 100;  // ******** SET TOTAL FILE IN FOLDER
 
     private Font font;
 
     private Button btnMenu;
     private Button btnNext;
     private Button btnPrev;
-    private static int currentPage;
+    private int currentPage = 1;
 
     public static void init() {
-        
+
     }
 
-    public BookSelected(StateManager sm) {    
+    public BookSelected(StateManager sm) {
         super(sm);
 
         System.out.println("LOAD SUCCESSFUL");
@@ -58,7 +57,6 @@ public class BookSelected extends BookState {
                 btnNext.createButton(">", imgHover, font, btnNext.getWidth(), btnNext.getHeight(), 32, 20));
         btnPrev.addHoverImage(
                 btnPrev.createButton("<", imgHover, font, btnPrev.getWidth(), btnPrev.getHeight(), 32, 20));
-
         btnMenu.addEvent(e -> {
             sm.unloadState(StateManager.BOOK);
             sm.loadState(StateManager.SELECTOR);
@@ -69,8 +67,6 @@ public class BookSelected extends BookState {
                 currentPage++;
                 System.out.println("Current Page : " + currentPage);
             }
-            totalFiles++;
-            System.out.println("Current Page : " + totalFiles);
         });
         btnPrev.addEvent(e -> {
             if (currentPage > 0) {
@@ -88,16 +84,17 @@ public class BookSelected extends BookState {
     }
 
     public void render(Graphics2D g) {
+        // render current page
+        if(currentPage > 0) {
+            Sprite.drawArray(g, String.valueOf(currentPage),
+                new Vector2f(Panel.width / 2 - String.valueOf(currentPage).length() + 500,
+                        Panel.height / 2 - 330),
+                68, 68,
+                50);
+        }
         btnMenu.render(g);
         btnNext.render(g);
         btnPrev.render(g);
-
-        // render current page
-        Sprite.drawArray(g, String.valueOf(currentPage),
-                new Vector2f(Panel.width / 2 - String.valueOf(currentPage).length() * (50 / 2),
-                        Panel.height / 2 - 200),
-                68, 68,
-                50);
     }
 
     @Override
@@ -105,5 +102,20 @@ public class BookSelected extends BookState {
         btnNext.input(mouse, key);
         btnPrev.input(mouse, key);
         btnMenu.input(mouse, key);
+
+        // press left right to change page
+        if (key.left.down) {
+            if (currentPage > 0) {
+                currentPage--;
+                System.out.println("Current Page : " + currentPage);
+            }
+        }
+        if (key.right.down) {
+            if (currentPage < totalFiles) {
+                currentPage++;
+                System.out.println("Current Page : " + currentPage);
+            }
+        }
+
     }
 }

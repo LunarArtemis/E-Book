@@ -40,12 +40,8 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-    public Key up = new Key();
-    public Key down = new Key();
     public Key left = new Key();
     public Key right = new Key();
-    public Key attack = new Key();
-    public Key menu = new Key();
     public Key enter = new Key();
     public Key escape = new Key();
 
@@ -66,14 +62,10 @@ public class KeyHandler implements KeyListener {
     }
 
     public void toggle(KeyEvent e, boolean pressed) {
-        if (e.getKeyCode() == KeyEvent.VK_W) up.toggle(pressed);
-        if (e.getKeyCode() == KeyEvent.VK_S) down.toggle(pressed);
         if (e.getKeyCode() == KeyEvent.VK_A) left.toggle(pressed);
         if (e.getKeyCode() == KeyEvent.VK_D) right.toggle(pressed);
-        if (e.getKeyCode() == KeyEvent.VK_SPACE) attack.toggle(pressed);
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) escape.toggle(pressed);
         if (e.getKeyCode() == KeyEvent.VK_ENTER) enter.toggle(pressed);
-        if (e.getKeyCode() == KeyEvent.VK_E) menu.toggle(pressed);
     }
 
     @Override
