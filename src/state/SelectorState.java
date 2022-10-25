@@ -39,8 +39,10 @@ public class SelectorState extends BookState {
 
         btnBook1.addEvent(e -> {
             sm.unloadState(StateManager.SELECTOR);
+            BookSelected.SetPath(book1);
             System.out.println("UNLOAD SELECTOR");
             BookSelected.setName(book1);
+            BookSelected.book1 = true;
             sm.loadState(StateManager.BOOK);
         });
 
