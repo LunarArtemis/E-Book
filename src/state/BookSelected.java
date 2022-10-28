@@ -110,8 +110,13 @@ public class BookSelected extends BookState {
         }
 
         btnMenu.render(g);
-        btnNext.render(g);
-        btnPrev.render(g);
+        if (currentPage < totalFiles) {
+            btnNext.render(g);
+        }
+
+        if (currentPage > 1) {
+            btnPrev.render(g);
+        }
     }
 
     @Override
@@ -135,7 +140,7 @@ public class BookSelected extends BookState {
     }
 
     public static String SetPath(String TMPpath) {
-        return path = "/content/" + TMPpath + "/";
+        return path = "content/" + TMPpath + "/";
     }
 
     private static int SetTotalFiles(String path) {

@@ -50,9 +50,9 @@ public class ImageLoader{
         while (i <= count) {
             try {
                 System.out.println("Loading Image : " + i);
-                tmpSprite = new Sprite(tmppath + i + ".jpg", 562, 800);
+                tmpSprite = new Sprite(path + i + ".jpg", 562, 800);
                 tmpBTN = new Button("", Buffer(tmpSprite, 0, 0, 562, 800), font,
-                        new Vector2f(Panel.width / 2, Panel.height / 2), Panel.width / 2, Panel.height / 2);
+                        new Vector2f(Panel.width / 2, Panel.height / 2 - 50), (int) (562 / 1.5), (int) (800 / 1.5));
                 images.put(String.valueOf(i), tmpBTN);
                 i++;
             } catch (Exception e) {
