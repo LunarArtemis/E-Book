@@ -16,8 +16,8 @@ public class BookSelected extends BookState {
 
     private static String bookName = "";
     private static Font font;
-    private static String path = "content/Volume1/";
-    private static int totalFiles = 100; // ******** SET TOTAL FILE IN FOLDER
+    private static String path = "";
+    private static int totalFiles; // ******** SET TOTAL FILE IN FOLDER
 
     public static Boolean book1 = false;
 
@@ -37,7 +37,7 @@ public class BookSelected extends BookState {
         super(sm);
 
         new ImageLoader(path);
-
+        SetTotalFiles(path);
         System.out.println("LOAD SUCCESSFUL");
         System.out.println("BookSelected Loaded : " + bookName);
         System.out.println("Path : " + path);
@@ -62,7 +62,7 @@ public class BookSelected extends BookState {
         btnPrev.addHoverImage(
                 btnPrev.createButton("<", imgHover, font, btnPrev.getWidth(), btnPrev.getHeight(), 32, 20));
 
-        SetTotalFiles(path);
+        
 
         btnMenu.addEvent(e -> {
             sm.unloadState(StateManager.BOOK);

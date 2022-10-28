@@ -20,6 +20,7 @@ public class ImageLoader{
     private static Font font;;
 
     // Temporary path
+    public static String tmppath = "content/Chapter1/";
     public static Button tmpBTN;
     public static Sprite tmpSprite;
 
@@ -49,13 +50,12 @@ public class ImageLoader{
         while (i <= count) {
             try {
                 System.out.println("Loading Image : " + i);
-                tmpSprite = new Sprite("content/Volume1/" + i + ".jpg", 795, 1153);
-                tmpBTN = new Button("", Buffer(tmpSprite, 0, 0, 795, 1153), font,
+                tmpSprite = new Sprite(tmppath + i + ".jpg", 562, 800);
+                tmpBTN = new Button("", Buffer(tmpSprite, 0, 0, 562, 800), font,
                         new Vector2f(Panel.width / 2, Panel.height / 2), Panel.width / 2, Panel.height / 2);
                 images.put(String.valueOf(i), tmpBTN);
                 i++;
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 

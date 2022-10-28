@@ -15,7 +15,7 @@ public class SelectorState extends BookState {
     private Button btnBook1;
 
     // Edit Book names here
-    private String book1 = "Volume1";
+    private String book1 = "Chapter1";
 
     private Button bg;
     private Font font;
