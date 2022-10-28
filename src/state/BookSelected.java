@@ -119,25 +119,14 @@ public class BookSelected extends BookState {
         if (currentPage > 0) {
             btnNext.input(mouse, key);
         }
-        if (currentPage < totalFiles) {
+        if (currentPage <= totalFiles) {
             btnPrev.input(mouse, key);
         }
 
         btnMenu.input(mouse, key);
 
         // press left right to change page
-        if (key.left.down) {
-            if (currentPage > 0) {
-                currentPage--;
-                System.out.println("Current Page : " + currentPage);
-            }
-        }
-        if (key.right.down) {
-            if (currentPage < totalFiles) {
-                currentPage++;
-                System.out.println("Current Page : " + currentPage);
-            }
-        }
+        
     }
 
     public static BufferedImage Buffer(Sprite sprites, int x, int y, int width, int height) {
